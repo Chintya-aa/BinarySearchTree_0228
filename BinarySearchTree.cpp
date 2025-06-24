@@ -106,4 +106,35 @@ public:
         cout << ptr->info << " ";
         inorder(ptr->rightchild);
     }
+
+    void preorder(Node *ptr)
+    {
+        if (isEmpty())
+        {
+            cout << "Tree is empty" << endl;
+            return;
+        }
+        if (ptr == nullptr)
+        return;
+        
+        
+        cout << ptr->info << " ";
+        preorder(ptr->leftchild);
+        preorder(ptr->rightchild);
+    }
+    void posorder(Node *ptr)
+    {
+        if (isEmpty())
+        {
+            cout << "Tree is empty" << endl;
+            return;
+        }
+        if (ptr == nullptr)
+        return;
+        
+        
+        posorder(ptr->leftchild);
+        posorder(ptr->rightchild);
+        cout << ptr->info << " ";
+    }
 };
