@@ -36,6 +36,10 @@ public:
         Node *newNode = new Node();
         
         // step 2: Assign value to the data field of new node
+
+        // step 3: make the left and right child of the new node point to NULL
+        newNode->leftchild = nullptr;
+        newNode->rightchild = nullptr;
     }
         
 }
