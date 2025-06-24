@@ -60,21 +60,36 @@ public:
         // step 6: if the value in the data field od new node is less than that of parent 
         if (x < parent->info)
         {
-            // 6a : make the left of parent point to the new node
+            // 6a: make the left of parent point to the new node 
             parent->leftchild = newNode;
 
-            // 6b : exit
+            // 6b: exit
             return;
         }
-        // step 7: if the value in the data field of the new node is greater than of the parent
-        else if (x > parent->info)
-        {
-            // 7a : make the right child of parent point to the new node
-            parent->rightchild = newNode;
 
-            // 7b : exit
+        // step 7: if the value in the data field of the new node is greater than that of the parent
+        else if(x > parent->info)
+        {
+            // 7a: make the right child of parent point to the new node
+            parent ->rightchild = newNode;
+
+            // 7b: exit
             return;
         }
-        
     }
-}
+
+    void search(int element, Node *&parent, Node *&currentNode)
+    {
+        //this function searches the currentNode of the specified node as well as the current node of its parent
+        currentNode = ROOT;
+        parent = nullptr;
+        while ((currentNode != nullptr) && (currentNode->info != element))
+        {
+            parent = currentNode;
+            if (element < currentNode ->info)
+                currentNode = currentNode->leftchild;
+            else
+                currentNode = currentNode->rightchild;
+        }
+    }
+    
